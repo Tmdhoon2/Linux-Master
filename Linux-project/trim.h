@@ -9,6 +9,11 @@
 #include <ctype.h>
 #include <stdlib.h>
 
+char *rtrim(const char *s){
+    while(isspace(*s) || !isprint(*s)) ++s;
+    return strdup(s);
+}
+
 char *ltrim(const char *s){
     char *r = strdup(s);
     if(r != NULL){
@@ -17,11 +22,6 @@ char *ltrim(const char *s){
         *++fr = 0;
     }
     return r;
-}
-
-char *rtrim(const char *s){
-    while(isspace(*s) || !isprint(*s)) ++s;
-    return strdup(s);
 }
 
 char *trim(const char *s){

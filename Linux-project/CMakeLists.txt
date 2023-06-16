@@ -3,4 +3,4 @@ project(Linux_project)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Linux_project main.cpp SaveSwBlockInfo.c)
+add_executable(Linux_project main.c)
