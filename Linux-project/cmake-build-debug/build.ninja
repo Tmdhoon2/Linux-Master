@@ -49,14 +49,8 @@ cmake_ninja_workdir = /Users/jeongseunghun/Desktop/Github/Linux-Master/Linux-pro
 
 build cmake_object_order_depends_target_Linux_project: phony || CMakeFiles/Linux_project.dir
 
-build CMakeFiles/Linux_project.dir/test.c.o: C_COMPILER__Linux_project_Debug /Users/jeongseunghun/Desktop/Github/Linux-Master/Linux-project/test.c || cmake_object_order_depends_target_Linux_project
-  DEP_FILE = CMakeFiles/Linux_project.dir/test.c.o.d
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/Linux_project.dir
-  OBJECT_FILE_DIR = CMakeFiles/Linux_project.dir
-
-build CMakeFiles/Linux_project.dir/dowrite.c.o: C_COMPILER__Linux_project_Debug /Users/jeongseunghun/Desktop/Github/Linux-Master/Linux-project/dowrite.c || cmake_object_order_depends_target_Linux_project
-  DEP_FILE = CMakeFiles/Linux_project.dir/dowrite.c.o.d
+build CMakeFiles/Linux_project.dir/main.c.o: C_COMPILER__Linux_project_Debug /Users/jeongseunghun/Desktop/Github/Linux-Master/Linux-project/main.c || cmake_object_order_depends_target_Linux_project
+  DEP_FILE = CMakeFiles/Linux_project.dir/main.c.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Linux_project.dir
   OBJECT_FILE_DIR = CMakeFiles/Linux_project.dir
@@ -69,7 +63,7 @@ build CMakeFiles/Linux_project.dir/dowrite.c.o: C_COMPILER__Linux_project_Debug 
 #############################################
 # Link the executable Linux_project
 
-build Linux_project: C_EXECUTABLE_LINKER__Linux_project_Debug CMakeFiles/Linux_project.dir/test.c.o CMakeFiles/Linux_project.dir/dowrite.c.o
+build Linux_project: C_EXECUTABLE_LINKER__Linux_project_Debug CMakeFiles/Linux_project.dir/main.c.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk
   OBJECT_DIR = CMakeFiles/Linux_project.dir
   POST_BUILD = :

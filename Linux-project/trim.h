@@ -9,26 +9,21 @@
 #include <ctype.h>
 #include <stdlib.h>
 
-char *rtrim(const char *s){
-    while(isspace(*s) || !isprint(*s)) ++s;
-    return strdup(s);
-}
+void trim_str(char *str) {
+    // start 포인터를 str 의 시작위치로 설정
+    char *start = str;
+    // end 포인터를 str 문자열 길이 -1 ( == 마지막 위치 ) 로 설정
+    char *end = str + (strlen(str) - 1);
 
-char *ltrim(const char *s){
-    char *r = strdup(s);
-    if(r != NULL){
-        char *fr = r + strlen(s) - 1;
-        while((isspace(*fr) || !isprint(*fr) || *fr == 0) && fr >= r) --fr;
-        *++fr = 0;
-    }
-    return r;
-}
+    // start 가 공백인 경우 start 포인터 앞으로 이동 (== 앞쪽 공백 제거)
+    while (isspace(*start)) start++;
+    // end 가 공백인 경우 end 포인터 뒤로 이동 (== 뒤쪽 공백 제거)
+    while (isspace(*end)) end--;
 
-char *trim(const char *s){
-    char *r = rtrim(s);
-    char *f = ltrim(r);
-    free(r);
-    return f;
+    // 문자열 앞으로 당김
+    memmove(str, start, end - start + 1);
+    // 문자열 끝 표시
+    str[end - start + 1] = '\0';
 }
 
 #endif
