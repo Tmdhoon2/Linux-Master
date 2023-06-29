@@ -1,3 +1,6 @@
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -22,22 +25,6 @@ typedef struct {
 
 SwBlock blocks[MAX_SW_BLOCKS];
 int swBlockCount;
-
-int getSignal(int random) {
-    if (random > 0 && random < 10) {
-        return SIGALRM;
-    } else if (random > 10 && random < 20) {
-        return SIGCHLD;
-    } else if (random > 20 && random < 30) {
-        return SIGINT;
-    } else if (random > 30 && random < 40) {
-        return SIGABRT;
-    } else if (random > 40 && random < 50){
-        return SIGBUS;
-    } else {
-        return SIGEMT;
-    }
-}
 
 void runSwBlock(SwBlock *block) {
     printf("%s 초기화 중...\n", block->name);
@@ -170,22 +157,6 @@ int main() {
     }
 
     while (1) {
-        //terminateSwBlock();
         sleep(1);
     }
 }
-
-//char *getWeek() {
-//    char restartTime[40] = "Fri Jun 23 08:49:58 2023";
-//    char weeks[7][10] = {"Mon", "Tue", "Wed", "Thr", "Fri", "Sat", "Sun"};
-//    char koreanWeeks[7][10] = {"월", "화", "수", "목", "금", "토", "일"};
-//    char *token = strtok(restartTime, " ");
-//    printf("%s\n", token);
-//    token = strtok(NULL, " ");
-//
-//    for(int i = 0; i<7; i++){
-//        if(strcmp(token, weeks[i]) != 0){
-//            return koreanWeeks[i];
-//        }
-//    }
-//}
